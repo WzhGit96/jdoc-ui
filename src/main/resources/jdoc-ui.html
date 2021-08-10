@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
     <script type="text/javascript" src="static/js/jquery.min.js"></script>
     <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/vue.js"></script>
 </head>
 <body>
 <div id="jdoc-header">
@@ -24,7 +25,7 @@
 
         <div class="authorize-wrapper"></div>
         <ul id="resources">
-            <li id="resource_userController" class="resource">
+            <li class="resource">
                 <div class="heading">
                     <h2>
                         <input type="checkbox" style="float: left;margin-right: 0.5rem;"/>
@@ -32,7 +33,7 @@
                         : User Controller
                     </h2>
                 </div>
-                <div id="UserController">
+                <div id="UserController" style="display: none">
                     <ul class="endpoints">
                         <li class="endpoint">
                             <ul class="operations">
@@ -53,28 +54,10 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="endpoint">
-                            <ul class="operations">
-                                <li class="post operation">
-                                    <div class="heading">
-                                        <h3>
-                                            <span class="http_method">
-                                                <a href="#" class="request-method">post</a>
-                                            </span>
-                                            <span class="path">
-                                                <a href="#">/white-business-auth/v1/user/after-login</a>
-                                            </span>
-                                        </h3>
-                                        <span class="markdown">
-                                            <p>登陆后获取用户信息 <input type="checkbox" id="jdoc#xxx" value="1"></p>
-                                        </span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
                     </ul>
                 </div>
             </li>
+            <resource-list v-for="row in rows" :key="row.modelId" :row="row"></resource-list>
         </ul>
     </div>
 </div>
