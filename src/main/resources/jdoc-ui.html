@@ -9,29 +9,30 @@
     <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div id="jdoc-header">
-        <div class="jdoc-ui-wrap">
-            <span class="jdoc-ui-title">JDOC</span>
-        </div>
+<div id="jdoc-header">
+    <div class="jdoc-ui-wrap">
+        <span class="jdoc-ui-title">JDOC</span>
     </div>
+</div>
 
-    <div id="jdoc-app">
-        <div class="container" id="resource-container">
-            <div class="jdoc-app-title">WHITE-BUSINESS</div>
-            <div class="jdoc-app-remark">
-                <p>current environment is sit</p>
-            </div>
+<div id="jdoc-app">
+    <div class="container" id="resource-container">
+        <div class="jdoc-app-title">WHITE-BUSINESS</div>
+        <div class="jdoc-app-remark">
+            <p>current environment is sit</p>
+        </div>
 
-            <div class="authorize-wrapper"></div>
-            <ul id="resources">
-                <li id="resource_userController" class="resource">
-                    <div class="heading">
-                        <h2>
-                            <input type="checkbox" style="float: left;margin-right: 0.5rem;"/>
-                            <a href="#" class="toggleEndpointList">user-controller</a>
-                            : User Controller
-                        </h2>
-                    </div>
+        <div class="authorize-wrapper"></div>
+        <ul id="resources">
+            <li id="resource_userController" class="resource">
+                <div class="heading">
+                    <h2>
+                        <input type="checkbox" style="float: left;margin-right: 0.5rem;"/>
+                        <a href="javascript:expand('UserController')" class="toggleEndpointList">user-controller</a>
+                        : User Controller
+                    </h2>
+                </div>
+                <div id="UserController">
                     <ul class="endpoints">
                         <li class="endpoint">
                             <ul class="operations">
@@ -39,18 +40,46 @@
                                     <div class="heading">
                                         <h3>
                                             <span class="http_method">
-                                                <a href="#" class="request-method">GET</a>
+                                                <a href="#" class="request-method">get</a>
+                                            </span>
+                                            <span class="path">
+                                                <a href="#">/white-business-auth/v1/user/after-login</a>
                                             </span>
                                         </h3>
+                                        <span class="markdown">
+                                            <p>登陆后获取用户信息 <input type="checkbox" id="jdocxxx" value="1"></p>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="endpoint">
+                            <ul class="operations">
+                                <li class="post operation">
+                                    <div class="heading">
+                                        <h3>
+                                            <span class="http_method">
+                                                <a href="#" class="request-method">post</a>
+                                            </span>
+                                            <span class="path">
+                                                <a href="#">/white-business-auth/v1/user/after-login</a>
+                                            </span>
+                                        </h3>
+                                        <span class="markdown">
+                                            <p>登陆后获取用户信息 <input type="checkbox" id="jdoc#xxx" value="1"></p>
+                                        </span>
                                     </div>
                                 </li>
                             </ul>
                         </li>
                     </ul>
-                </li>
-            </ul>
-        </div>
+                </div>
+            </li>
+        </ul>
     </div>
+</div>
 
 </body>
+
+<script type="text/javascript" src="static/js/pages/jdoc-ui.js"></script>
 </html>

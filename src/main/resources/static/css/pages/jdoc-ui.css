@@ -119,7 +119,42 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     padding: 0;
 }
 
+.post > .heading {
+    background-color: #e7f6ec;
+    border: 1px solid #c3e8d1;
+    float: none;
+    clear: both;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
 .get .heading h3 {
+    display: block;
+    clear: none;
+    float: left;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1em;
+    color: #000;
+    font-size: 1.1em;
+}
+
+.post .heading h3 {
+    display: block;
+    clear: none;
+    float: left;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1em;
+    color: #000;
+    font-size: 1.1em;
+}
+
+ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation div.heading h3 {
     display: block;
     clear: none;
     float: left;
@@ -134,7 +169,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     list-style: none;
 }
 
-.request-method {
+.get .request-method {
     text-transform: uppercase;
     text-decoration: none;
     color: #fff;
@@ -145,4 +180,42 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     padding: 7px 0 4px;
     border-radius: 2px;
     background-color: #0f6ab4;
+}
+
+.post .request-method {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    width: 50px;
+    font-size: .7em;
+    text-align: center;
+    padding: 7px 0 4px;
+    border-radius: 2px;
+    background-color: #10a54a;
+}
+
+span.path a {
+    color: #000;
+    text-decoration: none;
+}
+
+span.path a:hover {
+    text-decoration: underline;
+}
+
+.markdown {
+    float: right;
+}
+
+.markdown p {
+    color: #0f6ab4;;
+    font-size: 1rem;
+    margin: 4px 0 3px;
+    margin-right: 0.5rem;
+}
+
+.http_method a:hover {
+    text-decoration: none;
+    color: #ffffff;
 }
