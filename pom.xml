@@ -16,7 +16,7 @@
     <build>
         <resources>
             <resource>
-                <directory>${project.build.basedir}/src/main/resources</directory>
+                <directory>${project.basedir}/src/main/resources</directory>
                 <targetPath>${destDir}</targetPath>
             </resource>
         </resources>
