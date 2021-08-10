@@ -2,15 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JDOC-UI</title>
+    <title>JDOC UI</title>
     <link rel="stylesheet" type="text/css" href="static/css/pages/jdoc-ui.css">
     <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
     <script type="text/javascript" src="static/js/jquery.min.js"></script>
     <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <header>
+    <div id="jdoc-header">
+        <div class="jdoc-ui-wrap">
+            <span class="jdoc-ui-title">JDOC</span>
+        </div>
+    </div>
 
-    </header>
+    <div id="jdoc-app">
+        <div class="container" id="resource-container">
+            <div class="jdoc-app-title">WHITE-BUSINESS</div>
+            <div class="jdoc-app-remark">
+                <p>current environment is sit</p>
+            </div>
+
+            <div class="authorize-wrapper"></div>
+            <ul id="resources">
+                <li id="resource_userController" class="resource">
+                    <div class="heading">
+                        <h2>
+                            <input type="checkbox" style="float: left;margin-right: 0.5rem;"/>
+                            <a href="#" class="toggleEndpointList">user-controller</a>
+                            : User Controller
+                        </h2>
+                    </div>
+                    <ul class="endpoints">
+                        <li class="endpoint">
+                            <ul class="operations">
+                                <li class="get operation">
+                                    <div class="heading">
+                                        <h3>
+                                            <span class="http_method">
+                                                <a href="#" class="request-method">GET</a>
+                                            </span>
+                                        </h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 </body>
 </html>

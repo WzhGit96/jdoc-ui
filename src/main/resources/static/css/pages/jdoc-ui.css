@@ -1,0 +1,148 @@
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+#jdoc-header {
+    background-color: #89bf04;
+    padding: 9px 14px 19px;
+    height: 50px;
+    min-width: 775px;
+}
+
+.jdoc-ui-wrap {
+    line-height: 1;
+    font-family: Droid Sans, sans-serif;
+    min-width: 760px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jdoc-ui-title {
+    display: inline-block;
+    padding: 5px 0 0 10px;
+    color: #fff;
+    font-size: 100%;
+    border: 0;
+    font-size: 2.0rem;
+    font-weight: 700;
+}
+
+#jdoc-app {
+    line-height: 1;
+    font-family: Droid Sans, sans-serif;
+    min-width: 760px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+}
+
+.jdoc-app-title {
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.authorize-wrapper {
+    margin: 15px 0 10px;
+}
+
+#resources {
+    font-family: Droid Sans, sans-serif;
+    font-size: .9em;
+    list-style: none;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+.resource {
+    border-bottom: none;
+}
+
+.heading {
+    border: 1px solid transparent;
+    float: none;
+    clear: both;
+    overflow: hidden;
+    display: block;
+}
+
+.heading h2 {
+    color: #999;
+    display: block;
+    clear: none;
+    float: left;
+    font-family: Droid Sans, sans-serif;
+    font-weight: 700;
+    font-size: 1.3em;
+    padding: 10px 0;
+}
+
+.heading h2 a {
+    text-decoration: none;
+    color: #999;
+}
+
+.heading h2 a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.operations {
+    padding-left: 0;
+}
+
+.operation {
+    float: none;
+    clear: both;
+    overflow: hidden;
+    display: block;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.get > .heading {
+    background-color: #e7f0f7;
+    border: 1px solid #c3d9ec;
+    float: none;
+    clear: both;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.get .heading h3 {
+    display: block;
+    clear: none;
+    float: left;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1em;
+    color: #000;
+}
+
+.endpoints {
+    list-style: none;
+}
+
+.request-method {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    width: 50px;
+    font-size: .7em;
+    text-align: center;
+    padding: 7px 0 4px;
+    border-radius: 2px;
+    background-color: #0f6ab4;
+}
