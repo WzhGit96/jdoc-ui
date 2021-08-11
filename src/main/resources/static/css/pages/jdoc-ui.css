@@ -219,3 +219,36 @@ span.path a:hover {
     text-decoration: none;
     color: #ffffff;
 }
+
+.content {
+    border-top: none;
+    background-color: #ebf3f9;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    vertical-align: baseline;
+}
+
+.content h4 {
+    margin-top: 20px;
+    margin-left: 0.5rem;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    color: #0f6ab4;
+}
+
+.content p {
+    line-height: 1.4em;
+    color: #333;
+    margin-left: 0.5rem;
+}
+
+table.fullwidth {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.code {
+    font-family: Anonymous Pro,Menlo,Consolas,Bitstream Vera Sans Mono,Courier New,monospace;
+}

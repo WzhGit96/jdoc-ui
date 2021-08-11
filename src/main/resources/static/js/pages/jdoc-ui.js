@@ -661,3 +661,25 @@ var resourceList = new Vue({
         console.log("welcome")
     }
 });
+
+function expand(id) {
+    var el = $("#" + id + ">.interface-area");
+    var height = document.getElementById(id).getElementsByClassName("endpoints")[0].clientHeight;
+    if (el.css("height") === "0px") {
+        el.css("height", height + "px");
+    } else {
+        el.css("height", 0 + "px");
+    }
+}
+
+function showInfList(id) {
+    var el = $("#" + id ).contents().find(".content");
+    var height = document.getElementById(id).getElementsByClassName("field-area")[0].clientHeight + 76;
+    if (el.css("height") === "0px") {
+        el.css("border","1px solid #c3d9ec");
+        el.css("height", height + "px");
+    } else {
+        el.css("border","0px solid #c3d9ec");
+        el.css("height", 0 + "px");
+    }
+}
