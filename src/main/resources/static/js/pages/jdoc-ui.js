@@ -4,17 +4,6 @@ var resourceList = new Vue({
         rows: null
     },
     created: function () {
-        $.ajax({
-            url: '/jdoc-apis',
-            data: null,
-            dataType: 'JSON',
-            method: 'GET',
-            async: false,
-            success: function (e) {
-                resourceList.rows = e.modelProperties;
-            }
-        });
-
         Vue.component('resource-list', {
             props: ['row'],
             methods: {
@@ -89,14 +78,26 @@ var resourceList = new Vue({
                 '                                                        </tr>\n' +
                 '                                                    </thead>\n' +
                 '                                                    <tbody class="operation-params">\n' +
-                '                                                        <tr v-for="input in inf.input.fields">\n' +
+                '                                                      <template v-if="inf.input.fields.length > 0">\n' +
+                '                                                        <tr  v-for="input in inf.input.fields">\n' +
                 '                                                            <td class="code"><label>{{input.fieldName}}</label></td>\n' +
                 '                                                            <td >{{input.fieldDesc}}</td>\n' +
                 '                                                            <td >{{input.fieldType}}</td>\n' +
                 '                                                            <td >{{input.length}}</td>\n' +
                 '                                                            <td >{{input.necessary}}</td>\n' +
-                '                                                            <td ><input type="checkbox" class="input-checkbox" value="1"/></td>\n' +
+                '                                                            <td ><input type="checkbox" class="input-checkbox" v-bind:value="input.fieldName"/></td>\n' +
                 '                                                        </tr>\n' +
+                '                                                      </template>\n' +
+                '                                                      <template v-else>\n' +
+                '                                                        <tr>\n' +
+                '                                                            <td class="code"><label>无</label></td>\n' +
+                '                                                            <td >无</td>\n' +
+                '                                                            <td >无</td>\n' +
+                '                                                            <td >无</td>\n' +
+                '                                                            <td >无</td>\n' +
+                '                                                            <td ><input type="checkbox" class="input-checkbox" disabled/></td>\n' +
+                '                                                         </tr>\n' +
+                '                                                       </template>\n' +
                 '                                                    </tbody>\n' +
                 '                                                </table>\n' +
                 '                                            </form>\n' +
@@ -115,14 +116,26 @@ var resourceList = new Vue({
                 '                                                    </tr>\n' +
                 '                                                    </thead>\n' +
                 '                                                    <tbody class="operation-params">\n' +
-                '                                                    <tr>\n' +
-                '                                                        <td class="code"><label>name</label></td>\n' +
-                '                                                        <td >desc</td>\n' +
-                '                                                        <td >type</td>\n' +
-                '                                                        <td >0</td>\n' +
-                '                                                        <td >y</td>\n' +
-                '                                                        <td ><input type="checkbox" class="output-checkbox" value="1"/></td>\n' +
-                '                                                    </tr>\n' +
+                '                                                      <template v-if="inf.output.fields.length > 0">\n' +
+                '                                                        <tr  v-for="output in inf.output.fields">\n' +
+                '                                                          <td class="code"><label>{{output.fieldName}}</label></td>\n' +
+                '                                                          <td >{{output.fieldDesc}}</td>\n' +
+                '                                                          <td >{{output.fieldType}}</td>\n' +
+                '                                                          <td >{{output.length}}</td>\n' +
+                '                                                          <td >{{output.necessary}}</td>\n' +
+                '                                                          <td ><input type="checkbox" class="output-checkbox" v-bind:value="output.fieldName"/></td>\n' +
+                '                                                        </tr>\n' +
+                '                                                      </template>\n' +
+                '                                                      <template v-else>\n' +
+                '                                                        <tr>\n' +
+                '                                                          <td class="code"><label>无</label></td>\n' +
+                '                                                          <td >无</td>\n' +
+                '                                                          <td >无</td>\n' +
+                '                                                          <td >无</td>\n' +
+                '                                                          <td >无</td>\n' +
+                '                                                          <td ><input type="checkbox" class="output-checkbox" disabled/></td>\n' +
+                '                                                        </tr>\n' +
+                '                                                      </template>\n' +
                 '                                                    </tbody>\n' +
                 '                                                </table>\n' +
                 '                                            </form>\n' +
@@ -144,7 +157,7 @@ var resourceList = new Vue({
                 '                                            </span>\n' +
                 '                                        </h3>\n' +
                 '                                        <span class="markdown">\n' +
-                '                                            <p>{{inf.functionDesc}} <input type="checkbox" id="jdocxxx" value="1"></p>\n' +
+                '                                            <p>{{inf.functionDesc}} <input type="checkbox" class="inf-checkbox" v-bind:value="inf.id"></p>\n' +
                 '                                        </span>\n' +
                 '                                    </div>\n' +
                 '                                    <div v-bind:id="getContentId(inf.id, row.modelId)" class="content panel-collapse collapse">\n' +
@@ -166,14 +179,26 @@ var resourceList = new Vue({
                 '                                                        </tr>\n' +
                 '                                                    </thead>\n' +
                 '                                                    <tbody class="operation-params">\n' +
-                '                                                        <tr v-for="input in inf.input.fields">\n' +
+                '                                                      <template v-if="inf.input.fields.length > 0">\n' +
+                '                                                        <tr  v-for="input in inf.input.fields">\n' +
                 '                                                            <td class="code"><label>{{input.fieldName}}</label></td>\n' +
                 '                                                            <td >{{input.fieldDesc}}</td>\n' +
                 '                                                            <td >{{input.fieldType}}</td>\n' +
                 '                                                            <td >{{input.length}}</td>\n' +
                 '                                                            <td >{{input.necessary}}</td>\n' +
-                '                                                            <td ><input type="checkbox" class="input-checkbox" value="1"/></td>\n' +
+                '                                                            <td ><input type="checkbox" class="input-checkbox" v-bind:value="input.fieldName"/></td>\n' +
                 '                                                        </tr>\n' +
+                '                                                      </template>\n' +
+                '                                                      <template v-else>\n' +
+                '                                                        <tr>\n' +
+                '                                                            <td class="code"><label>无</label></td>\n' +
+                '                                                            <td >无</td>\n' +
+                '                                                            <td >无</td>\n' +
+                '                                                            <td >无</td>\n' +
+                '                                                            <td >无</td>\n' +
+                '                                                            <td ><input type="checkbox" class="input-checkbox" disabled/></td>\n' +
+                '                                                         </tr>\n' +
+                '                                                       </template>\n' +
                 '                                                    </tbody>\n' +
                 '                                                </table>\n' +
                 '                                            </form>\n' +
@@ -192,14 +217,26 @@ var resourceList = new Vue({
                 '                                                    </tr>\n' +
                 '                                                    </thead>\n' +
                 '                                                    <tbody class="operation-params">\n' +
-                '                                                    <tr>\n' +
-                '                                                        <td class="code"><label>name</label></td>\n' +
-                '                                                        <td >desc</td>\n' +
-                '                                                        <td >type</td>\n' +
-                '                                                        <td >0</td>\n' +
-                '                                                        <td >y</td>\n' +
-                '                                                        <td ><input type="checkbox" class="output-checkbox" value="1"/></td>\n' +
-                '                                                    </tr>\n' +
+                '                                                      <template v-if="inf.output.fields.length > 0">\n' +
+                '                                                        <tr  v-for="output in inf.output.fields">\n' +
+                '                                                          <td class="code"><label>{{output.fieldName}}</label></td>\n' +
+                '                                                          <td >{{output.fieldDesc}}</td>\n' +
+                '                                                          <td >{{output.fieldType}}</td>\n' +
+                '                                                          <td >{{output.length}}</td>\n' +
+                '                                                          <td >{{output.necessary}}</td>\n' +
+                '                                                          <td ><input type="checkbox" class="output-checkbox" v-bind:value="output.fieldName"/></td>\n' +
+                '                                                        </tr>\n' +
+                '                                                      </template>\n' +
+                '                                                      <template v-else>\n' +
+                '                                                        <tr>\n' +
+                '                                                          <td class="code"><label>无</label></td>\n' +
+                '                                                          <td >无</td>\n' +
+                '                                                          <td >无</td>\n' +
+                '                                                          <td >无</td>\n' +
+                '                                                          <td >无</td>\n' +
+                '                                                          <td ><input type="checkbox" class="output-checkbox" disabled/></td>\n' +
+                '                                                        </tr>\n' +
+                '                                                      </template>\n' +
                 '                                                    </tbody>\n' +
                 '                                                </table>\n' +
                 '                                            </form>\n' +
@@ -246,3 +283,16 @@ function showInfList(id) {
         el.css("visibility", "hidden");
     }
 }
+
+$(function () {
+    $.ajax({
+        url: '/jdoc-apis',
+        data: null,
+        dataType: 'JSON',
+        method: 'GET',
+        async: false,
+        success: function (e) {
+            resourceList.rows = e.modelProperties;
+        }
+    });
+})
